@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard</title>
+<link rel="stylesheet" href="/static/dashboard.css">
+{% block addcss  %}{% endblock %}
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="logo">My Dashboard</div>
+    {{session.get('user')}}
+    <ul class="nav-links">
+        <!-- Notes Dropdown -->
+        <li class="dropdown">
+            <a href="#">Notes ▼</a>
+            <div class="dropdown-content">
+                <a href="{{url_for('addnotes')}}">Add Notes</a>
+                <a href="{{url_for('viewallnotes')}}">View All Notes</a>
+                <a href="{{url_for('getexceldata')}}">Get Excel</a>
+            </div>
+        </li>
+
+        <!-- Files Dropdown -->
+        <li class="dropdown">
+            <a href="#">Files ▼</a>
+            <div class="dropdown-content">
+                <a href="{{url_for('addnotes')}}">Upload File</a>
+                <a href="{{url_for('viewallnotes')}}">View All Files</a>
+                <a href="{{url_for('getexceldata')}}">Get Excel</a>
+            </div>
+        </li>
+        {% block extra %}
+        <!-- Search -->
+        <li class="search-box">
+            <input type="text" placeholder="Search...">
+        </li>
+        {% endblock %}
+
+        <!-- Logout -->
+        <li>
+            <a href="{{url_for('logout')}}">
+            <button class="logout-btn">Logout</button></a>
+        </li>
+    </ul>
+</div>
+{% block content %}
+<div class="content">
+    <h1>Welcome to Dashboard</h1>
+    <p>Select options from the navbar</p>
+</div>
+{% endblock %}
+</body>
+</html>

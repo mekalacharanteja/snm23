@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            width: 300px;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .register-btn {
+            background: #28a745;
+            color: white;
+        }
+
+        .register-btn:hover {
+            background: #218838;
+        }
+
+        .login-btn {
+            background: #007bff;
+            color: white;
+        }
+
+        .login-btn:hover {
+            background: #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1></h1>
+
+    <a href="{{ url_for('register') }}">
+        <button class="register-btn">Register</button>
+    </a>
+
+    <a href="{{url_for('login')}}">
+        <button class="login-btn">Login</button>
+    </a>
+</div>
+
+</body>
+</html>

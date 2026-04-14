@@ -1,0 +1,22 @@
+{% extends "dashboard.html" %}
+{% block addcss  %}
+<link rel="stylesheet" href="/static/addnotes.css">
+{% endblock %}
+{% block extra %}{% endblock %}
+{% block content %}
+
+<h1>Uploadfile</h1>
+
+<form  method="POST" class="note-form" enctype="multipart/form-data">
+
+    <div class="form-group">
+        <label for="title">Upload File</label><br>
+        <input type="file" id="title" name="file">
+    </div>
+
+    <!-- Submit -->
+    <button type="submit" class="submit-btn">Save file</button>
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "dashboard.html" %}
+{% block addcss  %}
+<link rel="stylesheet" href="/static/addnotes.css">
+{% endblock %}
+{% block extra %}{% endblock %}
+{% block content %}
+
+<h1>Add Notes</h1>
+
+<form action="/addnotes" method="POST" class="note-form">
+
+    <!-- Title -->
+    <div class="form-group">
+        <label for="title">Title</label><br>
+        <input type="text" id="title" name="title" placeholder="Enter note title" required>
+    </div>
+
+    <!-- Description -->
+    <div class="form-group">
+        <label for="description">Description</label><br>
+        <textarea id="description" name="description" rows="6" placeholder="Write your note..." required></textarea>
+    </div>
+
+    <!-- Submit -->
+    <button type="submit" class="submit-btn">Save Note</button>
+
+</form>
+
+{% endblock %}

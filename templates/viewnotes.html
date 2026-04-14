@@ -1,0 +1,31 @@
+{% extends "dashboard.html" %}
+{% block addcss  %}
+<link rel="stylesheet" href="/static/addnotes.css">
+{% endblock %}
+{% block extra %}{% endblock %}
+{% block content %}
+
+<h1>Add Notes</h1>
+
+<form class="note-form">
+    
+
+    {{notesdata[3]}}
+    <!-- Title -->
+    <div class="form-group">
+        <label for="title">Title</label><br>
+        <input type="text" id="title" name="title" value="{{notesdata[1]}}" readonly>
+    </div>
+
+    <!-- Description -->
+    <div class="form-group">
+        <label for="description">Description</label><br>
+        <textarea id="description" name="description" rows="6" readonly>{{notesdata[2]}}</textarea>
+    </div>
+
+    <!-- Submit -->
+    <button type="submit" class="submit-btn">Save Note</button>
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forgot Password</title>
+</head>
+<body>
+
+    <h2>Forgot Password Page</h2>
+
+    <!-- 🔥 Flash Messages -->
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <p style="color: green; font-weight: bold;">{{ msg }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <form method="POST">
+        <input type="email" name="useremail" placeholder="Enter your email" required>
+        <button type="submit">Send OTP</button>
+    </form>
+
+</body>
+</html>

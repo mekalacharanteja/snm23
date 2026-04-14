@@ -1,0 +1,36 @@
+{% extends "dashboard.html" %}
+{% block addcss %}
+<link rel="stylesheet" href="/static/viewallnotes.css">
+{% endblock %}
+{% block content %}
+<div class="notes-container">
+    <h2>All Files</h2>
+
+    <table class="notes-table">
+        <thead>
+            <tr>
+                <th>FID</th>
+                <th>Filename</th>
+                <th>Created_at</th>
+            </tr>
+        </thead>
+        <tbody>
+           {% if allfilesdata %}
+           {% for i in allfilesdata %}
+            <tr>
+                <td>{{i[0]}}</td>
+                <td>{{i[1]}}</td>
+                <td>{{i[2]}}</td>
+                <td><a href="{{url_for('viewfiledata',fid=i[0])}}">view</a></td>
+                <td><a href="{{url_for('downloadfiledata',fid=i[0])}}">Download</a></td>
+                <td><a href="{{url_for('deletefile',fid=i[0])}}">delete</a></td>
+
+            </tr>
+            {% endfor %}
+            {% else %}
+            <p>no file found </p>
+            {% endif %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
