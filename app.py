@@ -57,7 +57,7 @@ def register():
                 flash('OTP has been sent to given mail.')
                 return redirect(url_for('otpverify',serverdata=endata(userdata)))
             elif count_email[0]==1:
-                flash('Email already existed')
+                flash('Email already exists')
                 return redirect(url_for('register'))
             else:
                 flash('Could not sent otp')
